@@ -4,7 +4,7 @@ export default class counterCom extends Component{
     constructor(){
         super();
         this.state={
-            counter : 0
+            counter : 1
         }
     }
     increment=()=>{
