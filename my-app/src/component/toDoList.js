@@ -50,7 +50,7 @@ export default class toDoList extends Component {
               <th>Operation</th>
             </tr>
             <tbody>
-            {this.state.toDoWork.map((element, index) =>
+            {this.state.toDoWork.map((element,index) =>
               <tr key={index}>
                 <td>{index + 1}</td>
                 <td>{element.work}</td>
