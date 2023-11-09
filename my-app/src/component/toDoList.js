@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import moment from "moment";
 
-
 export default class toDoList extends Component {
   constructor() {
     let data = []
