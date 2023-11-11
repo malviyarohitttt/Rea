@@ -374,24 +374,35 @@ export default class studentDetails extends Component {
       const branchCell = document.createElement("td");
       branchCell.textContent=student.branch;
       row.appendChild(branchCell);
+      
+      const operationCell = document.createElement('td');
+      
+      const button = document.createElement('button');
+      button.innerHTML = 'Delete';
+      button.className = 'btn btn-primary';
+      button.addEventListener('click',() => this.deleteStudent(student.rollNumber));
+      operationCell.appendChild(button);
 
-      const operationCell = document.createElement("td");
-      operationCell.innerHTML="<button class='btn btn-primary' onClick={()=>{this.deleteStudent(index)}}>Delete</button>"
-
-      row.appendChild(operationCell);
-
+      row.appendChild(operationCell)
       tbody.appendChild(row);
-    });
+    }
+    );
 
     table.appendChild(tbody);
     tableDiv.appendChild(table);
   }
 
-  deleteStudent = (index)=>{
-    this.state.studentDetails.splice(index,1);
-    this.setState({studentDetails:[...this.state.studentDetails]});
-    window.alert("Student Detail Deleted Successfully!")
-  }
+  deleteStudent = (rollNumber) => {
+    if (window.confirm('Are you sure!')) {
+      const { studentDetails } = this.state;
+      const indexToDelete = studentDetails.findIndex(student => student.rollNumber === rollNumber);
+  
+      if (indexToDelete !== -1) {
+        studentDetails.splice(indexToDelete, 1);
+        this.setState({ studentDetails: [...studentDetails] });
+      }
+    }
+  };
   render() {
     return (
       <div className="conatiner mt-5">
