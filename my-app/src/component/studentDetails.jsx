@@ -1,26 +1,16 @@
 import React, { Component } from 'react'
-
+import './studentDetails.css'
 export default class studentDetails extends Component {
 
   constructor(){
     super()
     let data = [
-      { rollNumber:1001, sname: "Mohit", email: "mohitmalviya2324@gmail.com", age: 32, mobile: 9669264151, branch: "CSE"},
-      { rollNumber:1002, sname: "Rahul", email: "rahulmalviya2324@gmail.com", age: 21, mobile: 8978458789, branch: "HR" },
-      { rollNumber:1003, sname: "Rohit", email: "rohitmalviya5432@gmail.com", age: 23, mobile: 9669264151, branch: "CSE"},
-      { rollNumber:1004, sname: "Rahul", email: "rahulmalviya2324@gmail.com", age: 21, mobile: 9669264151, branch: "IT" },
-      { rollNumber:1005, sname: "Rohit", email: "rohitmalviya2324@gmail.com", age: 25, mobile: 9669264151, branch: "CSE"},
-      { rollNumber:1006, sname: "Rahul", email: "rahulmalviya2324@gmail.com", age: 21, mobile: 8978458789, branch: "IT" },
-      { rollNumber:1007, sname: "Rahul", email: "rahulmalviya2324@gmail.com", age: 21, mobile: 8978458789, branch: "HR" },
-      { rollNumber:1008, sname: "Rahul", email: "rahulmalviya2324@gmail.com", age: 21, mobile: 8978458789, branch: "AI" },
-      { rollNumber:1009, sname: "Rahul", email: "rahulmalviya2324@gmail.com", age: 21, mobile: 8978458789, branch: "HR" },
-      { rollNumber:1010, sname: "Rahul", email: "rahulmalviya2324@gmail.com", age: 21, mobile: 8978458789, branch: "AI" },
-      { rollNumber:1011, sname: "Rahul", email: "rahulmalviya2324@gmail.com", age: 21, mobile: 8978458789, branch: "HR" },
-      { rollNumber:1012, sname: "Rahul", email: "rahulmalviya2324@gmail.com", age: 21, mobile: 8978458789, branch: "AI" },
-      { rollNumber:1013, sname: "Rahul", email: "rahulmalviya2324@gmail.com", age: 21, mobile: 8978458789, branch: "ML" },
-      { rollNumber:1014, sname: "Rahul", email: "rahulmalviya2324@gmail.com", age: 21, mobile: 8978458789, branch: "AI" },
-      { rollNumber:1015, sname: "Rahul", email: "rahulmalviya2324@gmail.com", age: 21, mobile: 8978458789, branch: "ML" },
-    ];
+      { rollNumber:1001, sname: "Rohit", email: "rohitmalviya2324@gmail.com", age: 21, mobile: 9669264151, branch: "CSE"},
+      { rollNumber:1002, sname: "Rahul", email: "rahulsingh8223@gmail.com", age: 20, mobile: 8223885865, branch: "IT" },
+      { rollNumber:1003, sname: "Mohit", email: "mohitmalviya2324@gmail.com", age: 22, mobile: 9644565735, branch: "HR"},
+      { rollNumber:1004, sname: "Vishal", email: "vishalrajputt88@gmail.com", age: 23, mobile: 9977999178, branch: "AI" },
+      { rollNumber:1005, sname: "Sumit", email: "sumittanwar257@gmail.com", age: 19, mobile: 9926991552, branch: "ML"},
+      ];
 
     this.state={
       studentDetails:data
@@ -39,7 +29,7 @@ export default class studentDetails extends Component {
     if (rollNumber.length < 1 || sname.length < 1 || email.length < 1 || age.length < 1 || mobile.length < 1) {
       window.alert("Please Fill All The Details!");
     } else {
-      const isDuplicate = this.state.studentDetails.some(element => {return element.rollNumber == rollNumber});
+      const isDuplicate = this.state.studentDetails.some(element => {return element.rollNumber === rollNumber});
       console.log(rollNumber);
       console.log(isDuplicate);
       if (isDuplicate) {
@@ -318,12 +308,18 @@ export default class studentDetails extends Component {
   //   tableDiv.appendChild(table);
   // }
 
-  filterbtn = (branch)=>{
-    this.filterStudent(branch);
-  }
+  // filterbtn = (branch)=>{
+  //   this.filterStudent(branch);
+  // }
 
   filterStudent =(branch)=>{
-    const Students = this.state.studentDetails.filter((element) => element.branch === branch);
+    if (branch==="ALL") {
+      var Students = this.state.studentDetails.filter((element) => element);
+    }else{
+      Students = this.state.studentDetails.filter((element) => element.branch === branch);
+    }
+
+    // const Students = this.state.studentDetails.filter((element) => element.branch === branch);
 
     let tableDiv = document.getElementById("tableDiv");
     tableDiv.innerHTML = "";
@@ -334,7 +330,7 @@ export default class studentDetails extends Component {
     const thead = document.createElement("thead");
     const headerRow = document.createElement("tr");
 
-    const headers = ["Sno.","Roll No.", "Name", "Email", "Age", "Mobile","Branch"];
+    const headers = ["S.No","Roll No", "Name", "Email", "Age", "Mobile","Branch","Operation"];
 
     headers.forEach((headerText) => {
       const th = document.createElement("th");
@@ -346,6 +342,7 @@ export default class studentDetails extends Component {
     table.appendChild(thead);
 
     const tbody = document.createElement("tbody");
+    tbody.setAttribute("class","tablebody")
 
     Students.forEach((student, index) => {
       const row = document.createElement("tr");
@@ -378,71 +375,110 @@ export default class studentDetails extends Component {
       branchCell.textContent=student.branch;
       row.appendChild(branchCell);
 
+      const operationCell = document.createElement("td");
+      operationCell.innerHTML="<button class='btn btn-primary' onClick={()=>{this.deleteStudent(index)}}>Delete</button>"
+
+      row.appendChild(operationCell);
+
       tbody.appendChild(row);
     });
 
     table.appendChild(tbody);
     tableDiv.appendChild(table);
   }
+
+  deleteStudent = (index)=>{
+    this.state.studentDetails.splice(index,1);
+    this.setState({studentDetails:[...this.state.studentDetails]});
+    window.alert("Student Detail Deleted Successfully!")
+  }
   render() {
     return (
       <div className="conatiner mt-5">
-        <h2 className="text-center text-secondary mb-3">Student Details</h2>
+        <h2 className="text-center text-secondary mb-3 heading">
+          Student Details
+        </h2>
+        <div className="row">
+          <div className="col-md-6">
+            <input
+              type="text"
+              id="name"
+              className="form-control mt-2 mb-2"
+              placeholder="Enter Your Name"
+              required
+            />
+          </div>
+          <div className="col-md-6">
+            <input
+              type="email"
+              id="email"
+              className="form-control mt-2 mb-2"
+              placeholder="Enter Your Email"
+              required
+            />
+          </div>
+          <div className="col-md-6">
+            <input
+              type="number"
+              id="rollNumber"
+              className="form-control mt-2 mb-2"
+              placeholder="Enter Your Roll Number"
+              required
+            />
+          </div>
+          <div className="col-md-6">
+            <input
+              type="number"
+              id="age"
+              className="form-control mt-2 mb-2"
+              placeholder="Enter Your Age"
+              required
+            />
+          </div>
+          <div className="col-md-6">
+            <input
+              type="number"
+              id="mobile"
+              className="form-control mt-2 mb-2"
+              placeholder="Enter Your Mobile Number"
+              required
+            />
+          </div>
+          <div className="col-md-6">
+            <select
+              name="branch"
+              id="branch"
+              className="form-control mt-2 mb-2"
+            >
+              <option>Select Branch</option>
+              <option value="CSE">CSE</option>
+              <option value="IT">IT</option>
+              <option value="HR">HR</option>
+              <option value="AI">AI</option>
+              <option value="ML">ML</option>
+            </select>
+          </div>
+        </div>
         <div className="inputFields mb-5">
-          <input
-            type="text"
-            id="name"
-            className="form-control mt-2 mb-2"
-            placeholder="Enter Your Name"
-            required
-          />
-          <input
-            type="email"
-            id="email"
-            className="form-control mt-2 mb-2"
-            placeholder="Enter Your Email"
-            required
-          />
-          <input
-            type="number"
-            id="rollNumber"
-            className="form-control mt-2 mb-2"
-            placeholder="Enter Your Roll Number"
-            required
-          />
-          <input
-            type="number"
-            id="age"
-            className="form-control mt-2 mb-2"
-            placeholder="Enter Your Age"
-            required
-          />
-          <input
-            type="number"
-            id="mobile"
-            className="form-control mt-2 mb-2"
-            placeholder="Enter Your Mobile Number"
-            required
-          />
-          <select name="branch" id="branch" className="form-control mt-2 mb-2">
-            <option>Select Branch</option>
-            <option value="CSE">CSE</option>
-            <option value="IT">IT</option>
-            <option value="HR">HR</option>
-            <option value="AI">AI</option>
-            <option value="ML">ML</option>
-          </select>
           <div className="d-flex justify-content-between">
             <button onClick={this.addStudent} className="btn btn-primary">
               Add Student
             </button>
             <div
               className="btns d-flex justify-content-between"
-              style={{ width: 300 }}
+              style={{ width: 350 }}
             >
               <button
                 onClick={() => {
-                  this.filterbtn("CSE");
+                  this.filterStudent("ALL");
+                }}
+                className="btn btn-primary"
+              >
+                ALL
+              </button>
+              <button
+                onClick={() => {
+                  this.filterStudent("CSE");
                 }}
                 className="btn btn-primary"
               >
@@ -450,7 +486,7 @@ export default class studentDetails extends Component {
               </button>
               <button
                 onClick={() => {
-                  this.filterbtn("IT");
+                  this.filterStudent("IT");
                 }}
                 className="btn btn-primary"
               >
@@ -458,7 +494,7 @@ export default class studentDetails extends Component {
               </button>
               <button
                 onClick={() => {
-                  this.filterbtn("HR");
+                  this.filterStudent("HR");
                 }}
                 className="btn btn-primary"
               >
@@ -466,7 +502,7 @@ export default class studentDetails extends Component {
               </button>
               <button
                 onClick={() => {
-                  this.filterbtn("AI");
+                  this.filterStudent("AI");
                 }}
                 className="btn btn-primary"
               >
@@ -474,7 +510,7 @@ export default class studentDetails extends Component {
               </button>
               <button
                 onClick={() => {
-                  this.filterbtn("ML");
+                  this.filterStudent("ML");
                 }}
                 className="btn btn-primary"
               >
@@ -483,7 +519,7 @@ export default class studentDetails extends Component {
             </div>
           </div>
         </div>
-        <div className="tableDiv" id='tableDiv'>
+        <div className="tableDiv" id="tableDiv">
           <table className="table">
             <thead>
               <tr>
@@ -494,9 +530,10 @@ export default class studentDetails extends Component {
                 <th>Age</th>
                 <th>Mobile</th>
                 <th>Branch</th>
+                <th>Operation</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="tablebody">
               {this.state.studentDetails.map((element, index) => (
                 <tr key={index}>
                   <td>{index + 1}</td>
@@ -506,6 +543,16 @@ export default class studentDetails extends Component {
                   <td>{element.age}</td>
                   <td>{element.mobile}</td>
                   <td>{element.branch}</td>
+                  <td>
+                    <button
+                      className='btn btn-primary'
+                      onClick={() => {
+                        this.deleteStudent(index);
+                      }}
+                    >
+                      Delete
+                    </button>
+                  </td>
                 </tr>
               ))}
             </tbody>
