@@ -337,6 +337,7 @@ export default class studentDetails extends Component {
       th.textContent = headerText;
       headerRow.appendChild(th);
     });
+    
 
     thead.appendChild(headerRow);
     table.appendChild(thead);
@@ -394,12 +395,11 @@ export default class studentDetails extends Component {
 
   deleteStudent = (rollNumber) => {
     if (window.confirm('Are you sure!')) {
-      const { studentDetails } = this.state;
-      const indexToDelete = studentDetails.findIndex(student => student.rollNumber === rollNumber);
+      const indexToDelete = this.state.studentDetails.findIndex(student => student.rollNumber === rollNumber);
   
       if (indexToDelete !== -1) {
-        studentDetails.splice(indexToDelete, 1);
-        this.setState({ studentDetails: [...studentDetails] });
+        this.state.studentDetails.splice(indexToDelete, 1);
+        this.setState({ studentDetails: [...this.state.studentDetails] });
       }
     }
   };
