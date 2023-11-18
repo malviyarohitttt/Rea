@@ -1,15 +1,15 @@
 import React from 'react'
-// import CounterCom from './component/counterCom'
-// import ToDoList from './component/toDoList'
-// import StudentDetails from './component/studentDetails'
-import StudentDetails1 from './component/studentDetails-1'
+// import CounterCom from './ClassComponent/counterCom'
+// import ToDoList from './ClassComponent/toDoList'
+// import StudentDetails from './ClassComponent/studentDetails'
+import StudentDetails1 from './ClassComponent/studentDetails-1'
 
 export default function App() {
   return (
     <div className='container'>
-      {/* <CounterCom/> */}
-      {/* <ToDoList/> */}
-      {/* <StudentDetails/> */}
+      {/* <CounterCom/>
+      <ToDoList/>
+      <StudentDetails/> */} 
       <StudentDetails1/>
     </div>
   )

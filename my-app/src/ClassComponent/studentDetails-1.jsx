@@ -38,7 +38,7 @@ export default class studentDetails1 extends Component {
     } else {
     //   console.log(rollNumber);
       const Duplicate = this.state.studentDetails.findIndex((student) => {
-        return student.rollNumber == rollNumber;
+        return student.rollNumber === rollNumber;
       });
     //   console.log(Duplicate);
       if (Duplicate >= 0) {
@@ -76,31 +76,31 @@ export default class studentDetails1 extends Component {
             <input type="number" id="rollNumber" className="form-control mt-2 mb-2" placeholder="Enter Your Roll Number" required/>
           </div>
           <div className="col-md-6">
-            <input type="number" id="age" className="form-control mt-2 mb-2" placeholder="Enter Your Age" required/>
+            <input type="number" id="age" min={5} max={30} className="form-control mt-2 mb-2" placeholder="Enter Your Age" required/>
           </div>
           <div className="col-md-6">
-            <input type="number" id="mobile" className="form-control mt-2 mb-2" placeholder="Enter Your Mobile Number" required/>
+            <input type="number" id="mobile" min={6000000000} max={9999999999} className="form-control mt-2 mb-2" placeholder="Enter Your Mobile Number" required/>
           </div>
           <div className="col-md-6">
-            <select name="branch" id="branch" className="form-control mt-2 mb-2">   
-              <option>Select Branch</option>
-              <option value="CSE">CSE</option>
-              <option value="IT">IT</option>
-              <option value="HR">HR</option>
-              <option value="AI">AI</option>
-              <option value="ML">ML</option>
-            </select>
+                <select name="branch" id="branch" className="form-control mt-2 mb-2">   
+                    <option>Select Branch</option>
+                    <option value="CSE">CSE</option>
+                    <option value="IT">IT</option>
+                    <option value="HR">HR</option>
+                    <option value="AI">AI</option>
+                    <option value="ML">ML</option>
+                </select>
           </div>
         </div>
         <div className="d-flex justify-content-between mb-5">
             <button onClick={this.addStudent} className="btn btn-outline-primary">Add Student</button>
-            <div className="btns d-flex justify-content-between" style={{ width: 350 }}> 
-                <button onClick={() =>{ this.setState({activeBranch: "All"});}} className="btn btn-primary">ALL</button> 
-                <button onClick={() =>{ this.setState({activeBranch: "CSE"});}} className="btn btn-primary">CSE</button> 
-                <button onClick={() =>{ this.setState({activeBranch: "IT"}); }} className="btn btn-primary">IT</button> 
-                <button onClick={() =>{ this.setState({activeBranch: "HR"}); }} className="btn btn-primary">HR</button> 
-                <button onClick={() =>{ this.setState({activeBranch: "AI"}); }} className="btn btn-primary">AI</button> 
-                <button onClick={() =>{ this.setState({activeBranch: "ML"}); }} className="btn btn-primary">ML</button>
+            <div className="btns d-flex justify-content-between" style={{ width: 500 }}> 
+                <button onClick={() =>{ this.setState({activeBranch: "All"});}} className="btn btn-primary">ALL({this.state.studentDetails.filter((student)=>{return student}).length})</button> 
+                <button onClick={() =>{ this.setState({activeBranch: "CSE"});}} className="btn btn-primary">CSE({this.state.studentDetails.filter((student)=>{return student.branch==="CSE"}).length})</button> 
+                <button onClick={() =>{ this.setState({activeBranch: "IT"}); }} className="btn btn-primary">IT ({this.state.studentDetails.filter((student)=>{return student.branch==="IT"}).length})</button> 
+                <button onClick={() =>{ this.setState({activeBranch: "HR"}); }} className="btn btn-primary">HR ({this.state.studentDetails.filter((student)=>{return student.branch==="HR"}).length})</button> 
+                <button onClick={() =>{ this.setState({activeBranch: "AI"}); }} className="btn btn-primary">AI ({this.state.studentDetails.filter((student)=>{return student.branch==="AI"}).length})</button> 
+                <button onClick={() =>{ this.setState({activeBranch: "ML"}); }} className="btn btn-primary">ML ({this.state.studentDetails.filter((student)=>{return student.branch==="ML"}).length})</button>
             </div>
         </div>
         <div className="tableDiv" id="tableDiv">
