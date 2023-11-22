@@ -1,0 +1,25 @@
+*{
+    padding: 0  !important;
+    margin: 0;
+}
+
+.nav-container{
+    background-color: black !important;
+    color: white !important;
+    height: 50px;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.navItems{
+    list-style: none;
+    gap: 35px !important;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-div{
+    justify-content: center;
+    align-items: center !important;
+    /* margin: 0 !important; */
+}
