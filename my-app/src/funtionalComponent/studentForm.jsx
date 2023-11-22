@@ -1,12 +1,7 @@
-// Student Details Project using functional Component(Without divideing into components)
+import React from 'react'
 
-
-import { useState } from "react"
-import Data from "./data.jsx";
-
-export default function StudentList(){
-
-  const addStudent= ()=>{
+export default function studentForm({setActiveBranch,studentList,setStudentList}) {
+const addStudent= ()=>{
     let sname = document.querySelector("#name").value;
     let email = document.querySelector("#email").value;
     let age = document.querySelector("#age").value;
@@ -37,20 +32,7 @@ export default function StudentList(){
       }
     }
   }
-
-  const deleteStudent = (rollNumber) => {
-    if (window.confirm('Are you sure!')) {
-      const indexToDelete =studentList.findIndex(student => student.rollNumber === rollNumber);
-      studentList.splice(indexToDelete, 1);
-      setStudentList((prevStudentList) => [...prevStudentList]);
-    }
-  };
- 
-  let [studentList,setStudentList] = useState(Data);
-  let [activeBranch,setActiveBranch] = useState("All");
-  
   return (
-    <>
     <div className="conatiner mt-5">
         <h2 className="text-center text-secondary mb-3 heading">Student Details</h2>
         <div className="row">
@@ -91,37 +73,6 @@ export default function StudentList(){
                 <button onClick={() =>{setActiveBranch("ML") }} className="btn btn-primary">ML</button>
             </div>
         </div>
-        <div className="tableDiv" id="tableDiv">
-          <table className="table">
-                <thead> 
-                    <tr>
-                        <th>S.No</th>
-                        <th>Roll No</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Age</th>
-                        <th>Mobile</th>
-                        <th>Branch</th>
-                        <th>Operation</th>
-                    </tr>
-                </thead>
-                <tbody className="tablebody">
-                    {studentList.filter((student,index)=>{return activeBranch==="All" || student.branch===activeBranch}).map((student, index) => (
-                    <tr key={index}>
-                        <td>{index + 1}</td>
-                        <td>{student.rollNumber}</td>
-                        <td>{student.sname}</td>
-                        <td>{student.email}</td>
-                        <td>{student.age}</td>
-                        <td>{student.mobile}</td>
-                        <td>{student.branch}</td>
-                        <td><button className='btn btn-primary' onClick={()=>{deleteStudent(student.rollNumber)}}>Delete</button></td>
-                    </tr>
-                    ))}
-                </tbody>
-          </table>
-        </div>
       </div>
-    </>
   )
 }

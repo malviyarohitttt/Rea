@@ -1,16 +1,19 @@
 import React from 'react'
-// import CounterCom from './ClassComponent/counterCom'
-// import ToDoList from './ClassComponent/toDoList'
-// import StudentDetails from './ClassComponent/studentDetails'
+
+import CounterCom from './ClassComponent/counterCom'
+import ToDoList from './ClassComponent/toDoList'
 import StudentDetails1 from './ClassComponent/studentDetails-1'
+import StudentDetails from './funtionalComponent/studentDetails.jsx'
+import StudentRecord from './funtionalComponent/studentRecord'
 
 export default function App() {
   return (
     <div className='container'>
       {/* <CounterCom/>
       <ToDoList/>
-      <StudentDetails/> */} 
       <StudentDetails1/>
+      <StudentDetails/> */}
+      <StudentRecord/>
     </div>
   )
 }

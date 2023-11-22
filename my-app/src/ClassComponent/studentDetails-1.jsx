@@ -1,66 +1,60 @@
+// Student Details Project using Class Component(using activeBranch state)
+
+
 import React, { Component } from 'react'
+import Data from "./data.jsx";
 import './studentDetails-1.css'
 export default class studentDetails1 extends Component {
 
-  constructor(){
-    super()
-    let data = 
-    [
-      { rollNumber:1001, sname: "Rohit", email: "rohitmalviya2324@gmail.com", age: 21, mobile: 9669264151, branch: "CSE"},
-      { rollNumber:1002, sname: "Rahul", email: "rahulsingh8223@gmail.com", age: 20, mobile: 8223885865, branch: "IT" },
-      { rollNumber:1003, sname: "Mohit", email: "mohitmalviya2324@gmail.com", age: 22, mobile: 9644565735, branch: "HR"},
-      { rollNumber:1004, sname: "Vishal", email: "vishalrajputt88@gmail.com", age: 23, mobile: 9977999178, branch: "AI" },
-      { rollNumber:1005, sname: "Sumit", email: "sumittanwar257@gmail.com", age: 19, mobile: 9926991552, branch: "ML"},
-    ];
-
-    this.state={
-      studentDetails:data,
-      activeBranch:"All"
-    }
+constructor(){
+  super()
+  this.state={
+    studentDetails:Data,
+    activeBranch:"All"
   }
+}
 
-  addStudent= ()=>{
-    let sname = document.querySelector("#name").value;
-    let email = document.querySelector("#email").value;
-    let age = document.querySelector("#age").value;
-    let mobile = document.querySelector("#mobile").value;
-    let branch = document.querySelector("#branch").value;
-    let rollNumber = document.querySelector("#rollNumber").value;
-
-    if (
-      rollNumber.length < 1 ||
-      sname.length < 1 ||
-      email.length < 1 ||
-      age.length < 1 ||
-      mobile.length < 1
-    ) {
-      window.alert("Please Fill All The Details!");
+addStudent= ()=>{
+  let sname = document.querySelector("#name").value;
+  let email = document.querySelector("#email").value;
+  let age = document.querySelector("#age").value;
+  let mobile = document.querySelector("#mobile").value;
+  let branch = document.querySelector("#branch").value;
+  let rollNumber = document.querySelector("#rollNumber").value;
+  if (
+    rollNumber.length < 1 ||
+    sname.length < 1 ||
+    email.length < 1 ||
+    age.length < 1 ||
+    mobile.length < 1
+  ) {
+    window.alert("Please Fill All The Details!");
+  } else {
+  //   console.log(rollNumber);
+    const Duplicate = this.state.studentDetails.findIndex((student) => {
+      return student.rollNumber === rollNumber;
+    });
+  //   console.log(Duplicate);
+    if (Duplicate >= 0) {
+      window.alert("Student Alredy Exist");
     } else {
-    //   console.log(rollNumber);
-      const Duplicate = this.state.studentDetails.findIndex((student) => {
-        return student.rollNumber === rollNumber;
+      const newStudent = { rollNumber, sname, email, age, mobile, branch };
+      this.setState({
+        studentDetails: [...this.state.studentDetails, newStudent],
       });
-    //   console.log(Duplicate);
-      if (Duplicate >= 0) {
-        window.alert("Student Alredy Exist");
-      } else {
-        const newStudent = { rollNumber, sname, email, age, mobile, branch };
-        this.setState({
-          studentDetails: [...this.state.studentDetails, newStudent],
-        });
-        window.alert("Student Record Added Successfully");
-      }
+      window.alert("Student Record Added Successfully");
     }
   }
+}
 
-  deleteStudent = (rollNumber) => {
-    if (window.confirm('Are you sure!')) {
-      const indexToDelete = this.state.studentDetails.findIndex(student => student.rollNumber === rollNumber);
-      
-      this.state.studentDetails.splice(indexToDelete, 1);
-      this.setState({ studentDetails: [...this.state.studentDetails] });
-    }
-  };
+deleteStudent = (rollNumber) => {
+  if (window.confirm('Are you sure!')) {
+    const indexToDelete = this.state.studentDetails.findIndex(student => student.rollNumber === rollNumber);
+    
+    this.state.studentDetails.splice(indexToDelete, 1);
+    this.setState({ studentDetails: [...this.state.studentDetails] });
+  }
+};
   render() {
     return (
       <div className="conatiner mt-5">
