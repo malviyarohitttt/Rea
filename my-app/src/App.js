@@ -4,7 +4,7 @@ import CounterCom from './ClassComponent/counterCom'
 import ToDoList from './ClassComponent/toDoList'
 import StudentDetails1 from './ClassComponent/studentDetails-1'
 import StudentDetails from './funtionalComponent/studentDetails.jsx'
-import StudentRecord from './funtionalComponent/studentRecord'
+import StudentRecord from './StudentComponent/studentRecord'
 
 export default function App() {
   return (

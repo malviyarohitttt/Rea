@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function studentForm({setActiveBranch,studentList,setStudentList}) {
+export default function studentForm({activeBranch,setActiveBranch,studentList,setStudentList}) {
 const addStudent= ()=>{
     let sname = document.querySelector("#name").value;
     let email = document.querySelector("#email").value;
@@ -65,12 +65,12 @@ const addStudent= ()=>{
         <div className="d-flex justify-content-between mb-5">
             <button className="btn btn-outline-primary" onClick={addStudent}>Add Student</button>
             <div className="btns d-flex justify-content-between" style={{ width: 500 }}> 
-                <button onClick={() =>{setActiveBranch("All")}} className="btn btn-primary">ALL</button> 
-                <button onClick={() =>{setActiveBranch("CSE")}} className="btn btn-primary">CSE</button> 
-                <button onClick={() =>{setActiveBranch("IT") }} className="btn btn-primary">IT</button> 
-                <button onClick={() =>{setActiveBranch("HR") }} className="btn btn-primary">HR</button> 
-                <button onClick={() =>{setActiveBranch("AI") }} className="btn btn-primary">AI</button> 
-                <button onClick={() =>{setActiveBranch("ML") }} className="btn btn-primary">ML</button>
+                <button disabled={activeBranch==="All" ? true : false} onClick={() =>{setActiveBranch("All")}} className="btn btn-primary">All</button> 
+                <button disabled={activeBranch==="CSE" ? true : false} onClick={() =>{setActiveBranch("CSE")}} className="btn btn-primary">CSE</button> 
+                <button disabled={activeBranch==="IT" ? true : false} onClick={() =>{setActiveBranch("IT") }} className="btn btn-primary">IT</button> 
+                <button disabled={activeBranch==="HR" ? true : false} onClick={() =>{setActiveBranch("HR") }} className="btn btn-primary">HR</button> 
+                <button disabled={activeBranch==="AI" ? true : false} onClick={() =>{setActiveBranch("AI") }} className="btn btn-primary">AI</button> 
+                <button disabled={activeBranch==="ML" ? true : false} onClick={() =>{setActiveBranch("ML") }} className="btn btn-primary">ML</button>
             </div>
         </div>
       </div>
