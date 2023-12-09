@@ -5,97 +5,97 @@ import Header from '../Header/Header'
 function OurDoctor() {
   return <>
   <Header/>
-    <section class="team_section layout_padding mt-3">
-    <div class="container">
-      <div class="heading_container heading_center">
+    <section className="team_section layout_padding mt-3">
+    <div className="container">
+      <div className="heading_container heading_center">
         <h2>
           Our <span>Doctors</span>
         </h2>
       </div>
-      <div class="carousel-wrap ">
-        <div class="owl-carousel team_carousel">
-          <div class="item">
-            <div class="box">
-              <div class="img-box">
+      <div className="carousel-wrap ">
+        <div className="owl-carousel team_carousel">
+          <div className="item">
+            <div className="box">
+              <div className="img-box">
                 <img src="images/team1.jpg" alt="Photo" />
               </div>
-              <div class="detail-box">
+              <div className="detail-box">
                 <h5>
                   Hennry
                 </h5>
                 <h6>
                   MBBS
                 </h6>
-                <div class="social_box">
+                <div className="social_box">
                   <a href="">
-                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                    <i className="fa fa-facebook" aria-hidden="true"></i>
                   </a>
                   <a href="">
-                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                    <i className="fa fa-twitter" aria-hidden="true"></i>
                   </a>
                   <a href="">
-                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                    <i className="fa fa-linkedin" aria-hidden="true"></i>
                   </a>
                   <a href="">
-                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                    <i className="fa fa-instagram" aria-hidden="true"></i>
                   </a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="item">
-            <div class="box">
-              <div class="img-box">
+          <div className="item">
+            <div className="box">
+              <div className="img-box">
                 <img src="images/team2.jpg" alt="Photo" />
               </div>
-              <div class="detail-box">
+              <div className="detail-box">
                 <h5>
                   Jenni
                 </h5>
                 <h6>
                   MBBS
                 </h6>
-                <div class="social_box">
+                <div className="social_box">
                   <a href="">
-                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                    <i className="fa fa-facebook" aria-hidden="true"></i>
                   </a>
                   <a href="">
-                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                    <i className="fa fa-twitter" aria-hidden="true"></i>
                   </a>
                   <a href="">
-                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                    <i className="fa fa-linkedin" aria-hidden="true"></i>
                   </a>
                   <a href="">
-                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                    <i className="fa fa-instagram" aria-hidden="true"></i>
                   </a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="item">
-            <div class="box">
-              <div class="img-box">
+          <div className="item">
+            <div className="box">
+              <div className="img-box">
                 <img src="images/team3.jpg" alt="Photo" />
               </div>
-              <div class="detail-box">
+              <div className="detail-box">
                 <h5>
                   Morco
                 </h5>
                 <h6>
                   MBBS
                 </h6>
-                <div class="social_box">
+                <div className="social_box">
                   <a href="">
-                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                    <i className="fa fa-facebook" aria-hidden="true"></i>
                   </a>
                   <a href="">
-                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                    <i className="fa fa-twitter" aria-hidden="true"></i>
                   </a>
                   <a href="">
-                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                    <i className="fa fa-linkedin" aria-hidden="true"></i>
                   </a>
                   <a href="">
-                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                    <i className="fa fa-instagram" aria-hidden="true"></i>
                   </a>
                 </div>
               </div>
@@ -106,21 +106,21 @@ function OurDoctor() {
     </div>
   </section>
 
-  <section class="client_section layout_padding">
-    <div class="container">
-      <div class="heading_container">
+  <section className="client_section layout_padding">
+    <div className="container">
+      <div className="heading_container">
         <h2>
           <span>Testimonial</span>
         </h2>
       </div>
     </div>
-    <div class="container px-0">
-      <div id="customCarousel2" class="carousel  carousel-fade" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="box">
-              <div class="client_info">
-                <div class="client_name">
+    <div className="container px-0">
+      <div id="customCarousel2" className="carousel  carousel-fade" data-ride="carousel">
+        <div className="carousel-inner">
+          <div className="carousel-item active">
+            <div className="box">
+              <div className="client_info">
+                <div className="client_name">
                   <h5>
                     Morijorch
                   </h5>
@@ -128,17 +128,17 @@ function OurDoctor() {
                     Default model text
                   </h6>
                 </div>
-                <i class="fa fa-quote-left" aria-hidden="true"></i>
+                <i className="fa fa-quote-left" aria-hidden="true"></i>
               </div>
-              <p>
+              <p color='black'>
                 editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Variouseditors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Variouseditors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various
               </p>
             </div>
           </div>
-          <div class="carousel-item">
-            <div class="box">
-              <div class="client_info">
-                <div class="client_name">
+          <div className="carousel-item">
+            <div className="box">
+              <div className="client_info">
+                <div className="client_name">
                   <h5>
                     Rochak
                   </h5>
@@ -146,17 +146,17 @@ function OurDoctor() {
                     Default model text
                   </h6>
                 </div>
-                <i class="fa fa-quote-left" aria-hidden="true"></i>
+                <i className="fa fa-quote-left" aria-hidden="true"></i>
               </div>
-              <p>
+              <p color='black'>
                 Variouseditors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Variouseditors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.
               </p>
             </div>
           </div>
-          <div class="carousel-item">
-            <div class="box">
-              <div class="client_info">
-                <div class="client_name">
+          <div className="carousel-item">
+            <div className="box">
+              <div className="client_info">
+                <div className="client_name">
                   <h5>
                     Brad Johns
                   </h5>
@@ -164,22 +164,22 @@ function OurDoctor() {
                     Default model text
                   </h6>
                 </div>
-                <i class="fa fa-quote-left" aria-hidden="true"></i>
+                <i className="fa fa-quote-left" aria-hidden="true"></i>
               </div>
-              <p>
+              <p color='black'>
                 Variouseditors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy, editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Variouseditors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various
               </p>
             </div>
           </div>
         </div>
-        <div class="carousel_btn-box">
-          <a class="carousel-control-prev" href="#customCarousel2" role="button" data-slide="prev">
-            <i class="fa fa-angle-left" aria-hidden="true"></i>
-            <span class="sr-only">Previous</span>
+        <div className="carousel_btn-box">
+          <a className="carousel-control-prev" href="#customCarousel2" role="button" data-slide="prev">
+            <i className="fa fa-angle-left" aria-hidden="true"></i>
+            <span className="sr-only">Previous</span>
           </a>
-          <a class="carousel-control-next" href="#customCarousel2" role="button" data-slide="next">
-            <i class="fa fa-angle-right" aria-hidden="true"></i>
-            <span class="sr-only">Next</span>
+          <a className="carousel-control-next" href="#customCarousel2" role="button" data-slide="next">
+            <i className="fa fa-angle-right" aria-hidden="true"></i>
+            <span className="sr-only">Next</span>
           </a>
         </div>
       </div>

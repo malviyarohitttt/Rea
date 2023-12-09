@@ -5,16 +5,16 @@ import Footer from '../Footer/Footer'
 function Contact() {
   return <>
   <Header/>
-  <section class="contact_section layout_padding-bottom mt-5">
-    <div class="container">
-      <div class="heading_container">
+  <section className="contact_section layout_padding-bottom mt-5">
+    <div className="container">
+      <div className="heading_container">
         <h2>
           Get In Touch
         </h2>
       </div>
-      <div class="row">
-        <div class="col-md-7">
-          <div class="form_container">
+      <div className="row">
+        <div className="col-md-7">
+          <div className="form_container">
             <form action="">
               <div>
                 <input type="text" placeholder="Full Name" />
@@ -26,9 +26,9 @@ function Contact() {
                 <input type="text" placeholder="Phone Number" />
               </div>
               <div>
-                <input type="text" class="message-box" placeholder="Message" />
+                <input type="text" className="message-box" placeholder="Message" />
               </div>
-              <div class="btn_box">
+              <div className="btn_box">
                 <button>
                   SEND
                 </button>
@@ -36,8 +36,8 @@ function Contact() {
             </form>
           </div>
         </div>
-        <div class="col-md-5">
-          <div class="img-box">
+        <div className="col-md-5">
+          <div className="img-box">
             <img src="images/contact-img.jpg" alt="Photo" />
           </div>
         </div>

@@ -1,28 +1,37 @@
 import React from 'react'
-import { Link }  from 'react-router-dom'
+import { Link, Navigate, useNavigate }  from 'react-router-dom'
+import IsLoggedin from '../Authorization/IsLoggedin'
+
 
 
 function Header() {
+  const navigate = useNavigate();
+
+  const SignOut = ()=>{
+    sessionStorage.clear();
+    navigate("/")
+  }
+  
   return <>
   <div className="hero_area">
-      <header class="header_section">
-      {/* <div class="header_top">
-        <div class="container">
-          <div class="contact_nav">
+      <header className="header_section">
+      {/* <div className="header_top">
+        <div className="container">
+          <div className="contact_nav">
             <a href="">
-              <i class="fa fa-phone" aria-hidden="true"></i>
+              <i className="fa fa-phone" aria-hidden="true"></i>
               <span>
                 Call : +01 123455678990
               </span>
             </a>
             <a href="">
-              <i class="fa fa-envelope" aria-hidden="true"></i>
+              <i className="fa fa-envelope" aria-hidden="true"></i>
               <span>
                 Email : demo@gmail.com
               </span>
             </a>
             <a href="">
-              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              <i className="fa fa-map-marker" aria-hidden="true"></i>
               <span>
                 Location
               </span>
@@ -30,59 +39,80 @@ function Header() {
           </div>
         </div>
       </div> */}
-      <div class="header_bottom">
-        <div class="container-fluid">
-          <nav class="navbar navbar-expand-lg custom_nav-container ">
-            <Link class="navbar-brand" to='/' >
-              {/* <img src="images/logo.png" alt="Photo" /> */}
-              <h3 style={{ color:"rgb(0, 198, 169)",fontSize:"35px",fontWeight:"bolder"}}>Shubh Clinic</h3>
+      <div className="header_bottom">
+        <div className="container-fluid">
+          <nav className="navbar navbar-expand-lg custom_nav-container ">
+           <Link className="navbar-brand" to='/' >
+              <h3 style={{ color:"#3787e6",fontSize:"35px",fontWeight:"bolder"}}>Shubh Clinic</h3>
             </Link>
-
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class=""> </span>
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span className=""> </span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <div class="d-flex mr-auto flex-column flex-lg-row align-items-center">
-                <ul class="navbar-nav  ">
-                  <li class="nav-item active">
-                    <Link class="nav-link" to='/'>Home <span class="sr-only">(current)</span></Link>
+            {IsLoggedin() ?
+            <div className="collapse navbar-collapse" id="navbarSupportedContent">
+              <div className="d-flex mr-auto flex-column flex-lg-row align-items-center">
+                <ul className="navbar-nav  ">
+                  <li className="nav-item active">
+                    <Link to="/dashboard/add-reception" className="nav-link">Add Recptionist</Link>
                   </li>
-                  <li class="nav-item">
-                    <Link class="nav-link" to='/about'> About</Link>
+                  <li className="nav-item">
+                    <Link to="/dashboard/receptionlist" className="nav-link">Recptionist List</Link>
                   </li>
-                  <li class="nav-item">
-                    <Link class="nav-link" to='/treatment'>Treat      ment</Link>
+                  <li className="nav-item">
+                    <Link className="nav-link">Appointment List</Link>
                   </li>
-                  <li class="nav-item">
-                    <Link class="nav-link" to='/doctor'>Doctors</Link>
-                  </li>
-                  <li class="nav-item">
-                    <Link class="nav-link" to='/contact'>Contact Us</Link>
+                  <li className="nav-item">
+                    <Link to="/dashboard/profile" className="nav-link">Profile</Link>
                   </li>
                 </ul>
               </div>
-              <div class="quote_btn-container">
-                <Link to='/signin'>
-                  <i class="fa fa-user" aria-hidden="true"></i>
+              <div className="quote_btn-container">
+                <a className='btn btn-danger text-white'>
+                  <i className="fa fa-user" aria-hidden="true"></i>
+                  <span onClick={SignOut} >
+                    Sign Out
+                  </span>
+                </a>
+              </div>
+            </div> 
+            : 
+            <div className="collapse navbar-collapse" id="navbarSupportedContent">
+              <div className="d-flex mr-auto flex-column flex-lg-row align-items-center">
+                <ul className="navbar-nav  ">
+                  <li className="nav-item active">
+                    <Link className="nav-link" to='/'>Home <span className="sr-only">(current)</span></Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to='/about'> About</Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to='/treatment'>Treatment</Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to='/doctor'>Doctors</Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to='/contact'>Contact Us</Link>
+                  </li>
+                </ul>
+              </div>
+              <div className="quote_btn-container">
+                <Link to='/signin' className='btn btn-danger'>
+                  <i className="fa fa-user" aria-hidden="true"></i>
                   <span>
                     SignIn
                   </span>
                 </Link>
-                <Link to='/signup'>
-                  <i class="fa fa-user" aria-hidden="true"></i>
+                <Link to='/signup' className='btn btn-danger'>
+                  <i className="fa fa-user" aria-hidden="true"></i>
                   <span>
                     SignUp
                   </span>
                 </Link>
-                <form class="form-inline">
-                  <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                  </button>
-                </form>
               </div>
             </div>
+            }
           </nav>
         </div>
       </div>

@@ -2,19 +2,19 @@ import React from 'react'
 
 function Footer() {
   return <>
-    <footer class="footer_section">
+    <footer className="footer_section">
 
-<section class="info_section ">
-  <div class="container">
-    <div class="info_top">
-      <div class="info_logo">
+<section className="info_section ">
+  <div className="container">
+    <div className="info_top">
+      <div className="info_logo">
         <a href="">
           {/* <img src="images/logo.png" alt="Photo" /> */}
-          <h3 style={{ color:"rgb(0, 198, 169)",fontSize:"35px",fontWeight:"bolder"}}>Shubh Clinic</h3>
+          <h3 style={{ color:"#3787e6",fontSize:"35px",fontWeight:"bolder"}}>Shubh Clinic</h3>
 
         </a>
       </div>
-      <div class="info_form">
+      <div className="info_form">
         <form action="">
           <input type="email" placeholder="Your email" />
           <button>
@@ -23,54 +23,54 @@ function Footer() {
         </form>
       </div>
     </div>
-    <div class="info_bottom layout_padding2">
-      <div class="row info_main_row">
-        <div class="col-md-6 col-lg-3">
+    <div className="info_bottom layout_padding2">
+      <div className="row info_main_row">
+        <div className="col-md-6 col-lg-3">
           <h5>
             Address
           </h5>
-          <div class="info_contact">
+          <div className="info_contact">
             <a href="">
-              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              <i className="fa fa-map-marker" aria-hidden="true"></i>
               <span>
                 Location
               </span>
             </a>
             <a href="">
-              <i class="fa fa-phone" aria-hidden="true"></i>
+              <i className="fa fa-phone" aria-hidden="true"></i>
               <span>
                 Call +01 1234567890
               </span>
             </a>
             <a href="">
-              <i class="fa fa-envelope"></i>
+              <i className="fa fa-envelope"></i>
               <span>
                 demo@gmail.com
               </span>
             </a>
           </div>
-          <div class="social_box">
+          <div className="social_box">
             <a href="">
-              <i class="fa fa-facebook" aria-hidden="true"></i>
+              <i className="fa fa-facebook" aria-hidden="true"></i>
             </a>
             <a href="">
-              <i class="fa fa-twitter" aria-hidden="true"></i>
+              <i className="fa fa-twitter" aria-hidden="true"></i>
             </a>
             <a href="">
-              <i class="fa fa-linkedin" aria-hidden="true"></i>
+              <i className="fa fa-linkedin" aria-hidden="true"></i>
             </a>
             <a href="">
-              <i class="fa fa-instagram" aria-hidden="true"></i>
+              <i className="fa fa-instagram" aria-hidden="true"></i>
             </a>
           </div>
         </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="info_links">
+        <div className="col-md-6 col-lg-3">
+          <div className="info_links">
             <h5>
               Useful link
             </h5>
-            <div class="info_links_menu">
-              <a class="active" href="index.html">
+            <div className="info_links_menu">
+              <a className="active" href="index.html">
                 Home
               </a>
               <a href="about.html">
@@ -91,13 +91,13 @@ function Footer() {
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="info_post">
+        <div className="col-md-6 col-lg-3">
+          <div className="info_post">
             <h5>
               LATEST POSTS
             </h5>
-            <div class="post_box">
-              <div class="img-box">
+            <div className="post_box">
+              <div className="img-box">
                 <img src="images/post1.jpg" alt="Photo" />
               </div>
               <p>
@@ -105,8 +105,8 @@ function Footer() {
                 distribution
               </p>
             </div>
-            <div class="post_box">
-              <div class="img-box">
+            <div className="post_box">
+              <div className="img-box">
                 <img src="images/post2.jpg" alt="Photo" />
               </div>
               <p>
@@ -116,13 +116,13 @@ function Footer() {
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="info_post">
+        <div className="col-md-6 col-lg-3">
+          <div className="info_post">
             <h5>
               News
             </h5>
-            <div class="post_box">
-              <div class="img-box">
+            <div className="post_box">
+              <div className="img-box">
                 <img src="images/post3.jpg" alt="Photo" />
               </div>
               <p>
@@ -130,8 +130,8 @@ function Footer() {
                 distribution
               </p>
             </div>
-            <div class="post_box">
-              <div class="img-box">
+            <div className="post_box">
+              <div className="img-box">
                 <img src="images/post4.png" alt="Photo" />
               </div>
               <p>
@@ -146,7 +146,7 @@ function Footer() {
   </div>
 </section>
 
-  <div class="container">
+  <div className="container">
     <p>
       &copy; <span id="displayYear"></span> All Rights Reserved By
       <a href="https://html.design/">Free Html Templates</a>

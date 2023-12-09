@@ -7,6 +7,11 @@ import Doctor from './Components/OurDoctor/OurDoctor'
 import Treatment from './Components/Treatment/Treatment'
 import Singnin from './Components/SignIn-SingUp/Singnin'
 import Singnup from './Components/SignIn-SingUp/Singnup'
+import Dashboard from './Components/Dashboard/Dashboard'
+import ProtectedRoute from './Components/Authorization/ProtectedRoute'
+import Profile from './Components/Dashboard/Profile'
+import Recptionlist from './Components/Dashboard/ReceptionList'
+import AddReception from './Components/Dashboard/AddReception'
 
 
 
@@ -21,6 +26,10 @@ function App() {
       <Route path='/treatment' element={ <Treatment/> } />
       <Route path='/signin' element={ <Singnin/> } />
       <Route path='/signup' element={ <Singnup/> } />
+      <Route path='/dashboard' element={ <ProtectedRoute><Dashboard/></ProtectedRoute> } />
+      <Route path='/dashboard/profile' element={ <ProtectedRoute><Profile/></ProtectedRoute> } />
+      <Route path='/dashboard/receptionlist' element={ <ProtectedRoute><Recptionlist/></ProtectedRoute> } />
+      <Route path='/dashboard/add-reception' element={ <ProtectedRoute><AddReception/></ProtectedRoute> } />
     </Routes>
   </>
 }
