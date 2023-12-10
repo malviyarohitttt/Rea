@@ -11,7 +11,7 @@ function About() {
       <div className="row">
         <div className="col-md-6 ">
           <div className="img-box">
-            <img src="images/about-img.jpg" alt="Photo" />
+            <img src="images/about-img.jpg" alt="img" />
            </div>
         </div>
         <div className="col-md-6">

@@ -3,4 +3,5 @@ export default {
     doctorSignIn:"http://apps.codebetter.in:8082/clinic/auth/login",
     getReception:"http://apps.codebetter.in:8082/clinic/api/reception/lists",
     addReception:"http://apps.codebetter.in:8082/clinic/api/reception/save",
+    deleteReception:"http://apps.codebetter.in:8082/clinic/api/reception/delete/",
 }

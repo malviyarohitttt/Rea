@@ -5,7 +5,7 @@ import ApiEndPoint from '../ApiEndPoint/ApiEndPoint';
 
 function Recptionlist() {
 
-  const [receptionlist,setReceptionList] = useState();
+  const [receptionlist,setReceptionList] = useState([]);
 
   const loadReceptionlist = async ()=>{
     try {
@@ -23,6 +23,33 @@ function Recptionlist() {
   useEffect(() =>{
     loadReceptionlist();
   },[])
+
+  const deleteReception = async (receptionId)=>{
+    try {
+
+      if (window.confirm("Are you sure you want to delete !")) {
+        let token = sessionStorage.getItem("token");
+        let response = await axios.put(
+          ApiEndPoint.deleteReception + receptionId,{},
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          }
+        );
+
+        let index = receptionlist.findIndex(
+          (reception) => reception.id === receptionId
+        );
+        receptionlist.splice(index, 1);
+
+        setReceptionList([...receptionlist]);
+        // console.log(receptionlist);
+      }
+    } 
+    catch (err) {
+      console.log(err)
+    }
+    
+  }
   
   return (
     <>
@@ -50,7 +77,9 @@ function Recptionlist() {
                 <td>{reception.password}</td>
                 <td>{reception.raddress}</td>
                 <td>
-                  <button className="btn btn-dark">Delete</button>
+                  <button onClick={()=>deleteReception(reception.id)} className="btn btn-dark">Delete</button>
+                  <button className="btn btn-dark ml-1">Edit</button>
+
                 </td>
               </tr>
             )}

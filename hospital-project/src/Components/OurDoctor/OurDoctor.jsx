@@ -17,7 +17,7 @@ function OurDoctor() {
           <div className="item">
             <div className="box">
               <div className="img-box">
-                <img src="images/team1.jpg" alt="Photo" />
+                <img src="images/team1.jpg" alt="img" />
               </div>
               <div className="detail-box">
                 <h5>
@@ -27,16 +27,16 @@ function OurDoctor() {
                   MBBS
                 </h6>
                 <div className="social_box">
-                  <a href="">
+                  <a  >
                     <i className="fa fa-facebook" aria-hidden="true"></i>
                   </a>
-                  <a href="">
+                  <a  >
                     <i className="fa fa-twitter" aria-hidden="true"></i>
                   </a>
-                  <a href="">
+                  <a  >
                     <i className="fa fa-linkedin" aria-hidden="true"></i>
                   </a>
-                  <a href="">
+                  <a  >
                     <i className="fa fa-instagram" aria-hidden="true"></i>
                   </a>
                 </div>
@@ -46,7 +46,7 @@ function OurDoctor() {
           <div className="item">
             <div className="box">
               <div className="img-box">
-                <img src="images/team2.jpg" alt="Photo" />
+                <img src="images/team2.jpg" alt="img" />
               </div>
               <div className="detail-box">
                 <h5>
@@ -56,16 +56,16 @@ function OurDoctor() {
                   MBBS
                 </h6>
                 <div className="social_box">
-                  <a href="">
+                  <a  >
                     <i className="fa fa-facebook" aria-hidden="true"></i>
                   </a>
-                  <a href="">
+                  <a  >
                     <i className="fa fa-twitter" aria-hidden="true"></i>
                   </a>
-                  <a href="">
+                  <a  >
                     <i className="fa fa-linkedin" aria-hidden="true"></i>
                   </a>
-                  <a href="">
+                  <a  >
                     <i className="fa fa-instagram" aria-hidden="true"></i>
                   </a>
                 </div>
@@ -75,7 +75,7 @@ function OurDoctor() {
           <div className="item">
             <div className="box">
               <div className="img-box">
-                <img src="images/team3.jpg" alt="Photo" />
+                <img src="images/team3.jpg" alt="img" />
               </div>
               <div className="detail-box">
                 <h5>
@@ -85,16 +85,16 @@ function OurDoctor() {
                   MBBS
                 </h6>
                 <div className="social_box">
-                  <a href="">
+                  <a  >
                     <i className="fa fa-facebook" aria-hidden="true"></i>
                   </a>
-                  <a href="">
+                  <a  >
                     <i className="fa fa-twitter" aria-hidden="true"></i>
                   </a>
-                  <a href="">
+                  <a  >
                     <i className="fa fa-linkedin" aria-hidden="true"></i>
                   </a>
-                  <a href="">
+                  <a  >
                     <i className="fa fa-instagram" aria-hidden="true"></i>
                   </a>
                 </div>
@@ -130,7 +130,7 @@ function OurDoctor() {
                 </div>
                 <i className="fa fa-quote-left" aria-hidden="true"></i>
               </div>
-              <p color='black'>
+              <p style={{color:"black"}}>
                 editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Variouseditors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Variouseditors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various
               </p>
             </div>
@@ -148,7 +148,7 @@ function OurDoctor() {
                 </div>
                 <i className="fa fa-quote-left" aria-hidden="true"></i>
               </div>
-              <p color='black'>
+              <p style={{color:"black"}}>
                 Variouseditors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Variouseditors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.
               </p>
             </div>
@@ -166,18 +166,18 @@ function OurDoctor() {
                 </div>
                 <i className="fa fa-quote-left" aria-hidden="true"></i>
               </div>
-              <p color='black'>
+              <p style={{color:"black"}}>
                 Variouseditors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy, editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Variouseditors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various
               </p>
             </div>
           </div>
         </div>
         <div className="carousel_btn-box">
-          <a className="carousel-control-prev" href="#customCarousel2" role="button" data-slide="prev">
+          <a className="carousel-control-prev" role="button" data-slide="prev">
             <i className="fa fa-angle-left" aria-hidden="true"></i>
             <span className="sr-only">Previous</span>
           </a>
-          <a className="carousel-control-next" href="#customCarousel2" role="button" data-slide="next">
+          <a className="carousel-control-next"  role="button" data-slide="next">
             <i className="fa fa-angle-right" aria-hidden="true"></i>
             <span className="sr-only">Next</span>
           </a>

@@ -58,9 +58,8 @@ function AddReception() {
             </div>
             <div className="btn-box">
               <button className='btn btn-denger' type="submit">Add</button><br/><br/>
-              <small>{msg}</small>
+              <small><b>{msg}</b></small>
             </div>
-
           </form>
         </div>
       </div>

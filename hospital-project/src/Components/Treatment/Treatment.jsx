@@ -96,3 +96,4 @@ function Treatment() {
 }
 
 export default Treatment
+                                                                        
