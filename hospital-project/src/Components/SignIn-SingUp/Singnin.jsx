@@ -15,11 +15,13 @@ function Singnin() {
     event.preventDefault();
     try {
       let response = await axios.post(ApiEndPoint.doctorSignIn,{email,password})
-      // console.log(response.data)
+      // console.log(response.data.type)
+
       if(response.data.status){
-        // console.log("Login successful...")
         let currentUser = response.data.data;
         delete currentUser.password;
+        currentUser.type = response.data.type;
+
         sessionStorage.setItem("current_user", JSON.stringify(currentUser));
         sessionStorage.setItem("token",response.data.msg);
         navigate("/dashboard/profile")

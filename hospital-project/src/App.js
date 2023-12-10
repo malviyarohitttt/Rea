@@ -26,7 +26,7 @@ function App() {
       <Route path='/treatment' element={ <Treatment/> } />
       <Route path='/signin' element={ <Singnin/> } />
       <Route path='/signup' element={ <Singnup/> } />
-      <Route path='/dashboard' element={ <ProtectedRoute><Dashboard/></ProtectedRoute> } />
+      {/* <Route path='/dashboard' element={ <ProtectedRoute><Dashboard/></ProtectedRoute> } /> */}
       <Route path='/dashboard/profile' element={ <ProtectedRoute><Profile/></ProtectedRoute> } />
       <Route path='/dashboard/receptionlist' element={ <ProtectedRoute><Recptionlist/></ProtectedRoute> } />
       <Route path='/dashboard/add-reception' element={ <ProtectedRoute><AddReception/></ProtectedRoute> } />

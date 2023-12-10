@@ -1,3 +1,4 @@
+import Footer from "../Footer/Footer";
 import Header from "../Header/Header"
 
 function Profile() {
@@ -33,6 +34,10 @@ function Profile() {
                 <label htmlFor="email">Email</label>
                 <input type="email" className="form-control" id="email" placeholder={currentUser.email} readOnly />
               </div>
+              <div className="form-group col-lg-4">
+                <label htmlFor="type">Type</label>
+                <input type="email" className="form-control" id="type" placeholder={currentUser.type} readOnly />
+              </div>
             </div>
             {/* <div className="btn-box">
               <button className='btn btn-denger' type="submit">Submit Now</button>
@@ -42,6 +47,7 @@ function Profile() {
       </div>
     </div>
   </section>
+  <Footer/>
   </>
 }
 
