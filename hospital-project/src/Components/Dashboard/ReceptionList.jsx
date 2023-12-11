@@ -1,7 +1,8 @@
-import React, { useEffect, useReducer, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '../Header/Header'
 import axios from 'axios';
 import ApiEndPoint from '../ApiEndPoint/ApiEndPoint';
+import './Recptionlist.css'
 
 function Recptionlist() {
 
@@ -56,7 +57,7 @@ function Recptionlist() {
       <Header />
       <div className="container-fluid mt-2" style={{padding:"0 50px"}}>
         <table className="table">
-          <thead>
+          <thead className='tableHead'>
             <tr>
               <th>S No.</th>
               <th>Id</th>

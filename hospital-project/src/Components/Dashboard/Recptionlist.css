@@ -1,0 +1,16 @@
+.table{
+    border: 0.5px solid black;
+}
+.table tbody tr:nth-child(even){
+    background-color: gray;
+    color: whitesmoke;
+    font-weight: bold;
+}
+.table tbody tr:nth-child(odd){
+    font-weight: bold;
+}
+
+.tableHead tr{
+    background-color: #3787e6;
+    color: whitesmoke;
+}

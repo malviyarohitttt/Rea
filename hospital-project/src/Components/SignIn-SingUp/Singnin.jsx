@@ -9,6 +9,7 @@ function Singnin() {
 
   const [email,setEmail] = useState();
   const [password,setPassword] = useState();
+  const [msg,setMsg] = useState();
   const navigate = useNavigate()
   
   const doctorSingnin= async (event)=>{
@@ -27,7 +28,7 @@ function Singnin() {
         navigate("/dashboard/profile")
       }
       else{
-        // console.log(response.data.msg)
+        setMsg(response.data.msg)
       }
     } 
     catch (err) {
@@ -56,7 +57,8 @@ function Singnin() {
               </div>
             </div>
             <div className="btn-box">
-              <button className='btn btn-denger' type="submit">Submit Now</button>
+              <button className='btn btn-denger' type="submit">Submit Now</button><br/>
+              <small><b style={{textTransform:"capitalize"}}>{msg}</b></small>
             </div>
           </form>
         </div>

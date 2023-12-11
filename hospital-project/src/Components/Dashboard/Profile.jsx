@@ -20,23 +20,23 @@ function Profile() {
             <div className="form-row ">
               <div className="form-group col-lg-4">
                 <label htmlFor="id">ID</label>
-                <input type="email" className="form-control" id="id" placeholder={currentUser.id} readOnly />
+                <input type="email" className="form-control" id="id" value={currentUser.id} readOnly />
               </div>
               <div className="form-group col-lg-4">
                 <label htmlFor="name">Name</label>
-                <input type="password" className="form-control" id="name" placeholder={currentUser.name} readOnly />
+                <input type="text" className="form-control" id="name" value={currentUser.name} readOnly />
               </div>
               <div className="form-group col-lg-4">
                 <label htmlFor="phonenumber">Phone Number</label>
-                <input type="password" className="form-control" id="phonenumber" placeholder={currentUser.phoneNumber} readOnly />
+                <input type="number" className="form-control" id="phonenumber" value={currentUser.phoneNumber} readOnly />
               </div>
               <div className="form-group col-lg-4">
                 <label htmlFor="email">Email</label>
-                <input type="email" className="form-control" id="email" placeholder={currentUser.email} readOnly />
+                <input type="email" className="form-control" id="email" value={currentUser.email} readOnly />
               </div>
               <div className="form-group col-lg-4">
                 <label htmlFor="type">Type</label>
-                <input type="email" className="form-control" id="type" placeholder={currentUser.type} readOnly />
+                <input type="email" className="form-control" id="type" value={currentUser.type} readOnly />
               </div>
             </div>
             {/* <div className="btn-box">
