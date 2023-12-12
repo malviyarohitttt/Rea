@@ -12,6 +12,8 @@ import ProtectedRoute from './Components/Authorization/ProtectedRoute'
 import Profile from './Components/Dashboard/Profile'
 import Recptionlist from './Components/Dashboard/ReceptionList'
 import AddReception from './Components/Dashboard/AddReception'
+import AddApointment from './Components/Dashboard/Apointment/AddApointment'
+import ApointmentList from './Components/Dashboard/Apointment/ApointmentList'
 
 
 
@@ -30,6 +32,9 @@ function App() {
       <Route path='/dashboard/profile' element={ <ProtectedRoute><Profile/></ProtectedRoute> } />
       <Route path='/dashboard/receptionlist' element={ <ProtectedRoute><Recptionlist/></ProtectedRoute> } />
       <Route path='/dashboard/add-reception' element={ <ProtectedRoute><AddReception/></ProtectedRoute> } />
+      <Route path='/dashboard/add-apointment' element={ <ProtectedRoute><AddApointment/></ProtectedRoute> } />
+      <Route path='/dashboard/apointment-list' element={ <ProtectedRoute><ApointmentList/></ProtectedRoute> } />
+
     </Routes>
   </>
 }

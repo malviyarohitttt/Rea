@@ -11,6 +11,9 @@ function Header() {
     sessionStorage.clear();
     navigate("/")
   }
+
+  let currentUser = sessionStorage.getItem("current_user")
+  currentUser = JSON.parse(currentUser)
   
   return <>
   <div className="hero_area">
@@ -42,8 +45,7 @@ function Header() {
       <div className="header_bottom">
         <div className="container-fluid">
           <nav className="navbar navbar-expand-lg custom_nav-container ">
-
-            {IsLoggedin() 
+            {IsLoggedin() && currentUser.type === "doctor" 
             ? 
             <>
            <Link className="navbar-brand" to='/dashboard/profile' >
@@ -78,7 +80,40 @@ function Header() {
                 </a>
                 </div>
               </div> 
-            </>
+            </> 
+            : IsLoggedin() && currentUser.type === "reception" 
+            ? 
+            <>
+            <Link className="navbar-brand" to='/dashboard/profile' >
+               <h3 style={{ color:"#3787e6",fontSize:"35px",fontWeight:"bolder"}}>Shubh Clinic</h3>
+             </Link>
+             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <span className=""> </span>
+             </button>
+             <div className="collapse navbar-collapse" id="navbarSupportedContent">
+               <div className="d-flex mr-auto flex-column flex-lg-row align-items-center">
+                 <ul className="navbar-nav  ">
+                   <li className="nav-item active">
+                     <Link className="nav-link" to="/dashboard/add-apointment">Add Apointment </Link>
+                   </li>
+                   <li className="nav-item">
+                     <Link className="nav-link" to="/dashboard/apointment-list"> Apointment List</Link>
+                   </li>
+                   <li className="nav-item">
+                    <Link to="/dashboard/profile" className="nav-link">Profile</Link>
+                  </li>
+                 </ul>
+               </div>
+               <div className="quote_btn-container">
+                <a className='btn btn-danger text-white'>
+                  <i className="fa fa-user" aria-hidden="true"></i>
+                  <span onClick={SignOut} >
+                    Sign Out
+                  </span>
+                </a>
+                </div>
+              </div> 
+             </>
             : 
             <>
             <Link className="navbar-brand" to='/' >
