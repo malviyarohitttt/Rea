@@ -12,7 +12,6 @@ function ApointmentList() {
     const [PatientList,setPatientList] = useState([]);
     const [isLoading,setIsLoading] = useState(true);
 
-
     const loadApointmentList = async () =>{
         try {
             let token = sessionStorage.getItem("token")
