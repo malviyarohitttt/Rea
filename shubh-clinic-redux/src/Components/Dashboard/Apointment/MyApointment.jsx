@@ -12,7 +12,6 @@ function MyApointment() {
     const [PatientList,setPatientList] = useState([]);
     const [isLoading,setIsLoading] = useState(true);
     
-
     let current_user = sessionStorage.getItem('current_user');
     current_user = JSON.parse(current_user);
 
@@ -77,7 +76,7 @@ function MyApointment() {
                     <div>
                         <h4>SHUBH <span>CLINIC</span></h4>
                         <div class="form-row">
-                            <div class="form-group col-lg-3"><label>Patient Name :</label><b> {patient.name}</b></div>
+                            <div class="form-group col-lg-3"><label>Patient Name :</label><b style={{textTransform:"capitalize"}}> {patient.name}</b></div>
                             <div class="form-group col-lg-3"><label>Gender :</label><b> {patient.sex}</b></div>
                             <div class="form-group col-lg-3"><label>Patient Age :</label><b> {patient.age}</b></div>
                         </div>
@@ -102,13 +101,13 @@ function MyApointment() {
                             <hr/>
                             <div class="form-row">
                                 <div class="form-group col-lg-3"><label>Receptionist ID :</label><b> {patient.address.id}</b></div>
-                                <div class="form-group col-lg-3"><label>Receptionist Name : </label><b> {patient.address.name}</b></div>
+                                <div class="form-group col-lg-3"><label>Receptionist Name : </label><b style={{textTransform:"capitalize"}}> {patient.address.name}</b></div>
                                 <div class="form-group col-lg-3">
                                     <label><b>Contact</b></label><br />
-                                    Phone Number : <b>{patient.address.phoneNumber}</b><br/>
+                                    Phone Number : <b>{patient.address.phoneNumber}</b><br/>    
                                     <i>Email : <b>{patient.address.email}</b></i>
                                 </div>
-                                <div class="form-group col-lg-3"><label>Reception Address : </label><b> {patient.address.raddress}</b></div>
+                                <div class="form-group col-lg-3"><label>Reception Address : </label><b style={{textTransform:"capitalize"}}> {patient.address.raddress}</b></div>
                             </div>
                             <hr />
                             <div class="form-row text-center">
